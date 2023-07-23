@@ -22,6 +22,7 @@ The default port of this project is 8090
 ```
 
 Steps to build and run:
+Java Version - 17
 
 ./gradlew clean build
 
