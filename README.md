@@ -21,6 +21,12 @@ Unit tests to test the api too are added.
 
 ```
 The default port of this project is 8090
+API endpoints:
+http://localhost:8090/api/v1/elevator/goToFloor
+http://localhost:8090/api/v1/elevator/comeToFloor
+http://localhost:8090/api/v1/elevator/destinations
+http://localhost:8090/api/v1/elevator/nextDestinationFloor
+
 ```
 Software:
 
