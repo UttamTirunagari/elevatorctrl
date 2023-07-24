@@ -17,12 +17,19 @@ Design:
 -------
 This a springboot application. 
 With Elevator, Controller, service, request, response and enums for Direction and status.
+Unit tests to test the api too are added.
+
 ```
 The default port of this project is 8090
 ```
+Software:
+
+Java Version - 17
+
+Gradle 8.2.1
 
 Steps to build and run:
-Java Version - 17
+
 
 ./gradlew clean build
 

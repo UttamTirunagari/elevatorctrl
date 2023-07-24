@@ -27,6 +27,11 @@ public class ElevatorController {
     @Value("${numberOfFloors:10}")
     private int numberOfFloors;
 
+    /*
+    PUT Api, allows the actor to request an elevent be sent to their current floor.
+    It takes the floornumber as request, which is part of ElevatorRequest body,
+    And returns the Elevator object and message as response
+     */
     @ResponseBody
     @PutMapping(value = "/comeToFloor", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ElevatorResponse> comeToFloor(@RequestBody ElevatorRequest elevatorRequest) {
@@ -37,6 +42,11 @@ public class ElevatorController {
         return elevatorService.setFloorAndDirection(elevatorRequest.getFloorNumber());
     }
 
+    /*
+   PUT Api, allows the actor to request an elevent be sent to be bought to a floor.
+   It takes the floornumber as request, which is part of ElevatorRequest body,
+   And returns the Elevator object and message as response
+    */
     @ResponseBody
     @PutMapping(value = "/goToFloor", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ElevatorResponse> goToFloor(@RequestBody ElevatorRequest elevatorRequest) {
@@ -47,11 +57,17 @@ public class ElevatorController {
           return elevatorService.setFloorAndDirection(elevatorRequest.getFloorNumber());
     }
 
+    /*
+    GET Api, provides you a list of destination floors currently in place
+     */
     @GetMapping("/destinations")
     public ResponseEntity<String> getDestinations() {
         return ResponseEntity.ok(elevatorService.returnDestinationFloor());
     }
 
+    /*
+    GET Api to return the next destination floor
+     */
     @GetMapping("/nextDestinationFloor")
     public ResponseEntity<Integer> getNextDestinationFloor() {
         return ResponseEntity.ok(elevatorService.returnNextDestination());
